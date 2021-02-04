@@ -1,24 +1,42 @@
 ﻿using System;
 
+
 namespace introduccionNET
 {
-
-    class miNodo
+    namespace structsssssss
     {
-        public int valor;
+        struct miNodo
+        {
+            int Valor;
+
+            public void setValor(int valor)
+            {
+                this.Valor = valor;
+            }
+
+            public int getValor()
+            {
+                return Valor;
+            }
+            public miNodo(int valor)
+            {
+                this.Valor = valor;
+            }
+        }
     }
+   
     class Program
     {
         static void Main(string[] args)
         {
-            miNodo nuevoNodo = new miNodo();
-
-            nuevoNodo.valor = 128;
+            structsssssss.miNodo nuevoNodo = new structsssssss.miNodo(789);  
+            //nuevoNodo.setValor(456);           
 
             //Console.WriteLine("Hello World!");
             Console.WriteLine("Me lamo Camilo \nSon las : "+ DateTime.Now);
 
-            Console.WriteLine("El valor almacenado en el nodo es: " + nuevoNodo.valor);
+            Console.WriteLine("El valor almacenado en el nodo es: " + nuevoNodo.getValor());
+
         }
     }
 }
