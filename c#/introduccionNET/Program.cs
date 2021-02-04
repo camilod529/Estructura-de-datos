@@ -16,7 +16,7 @@ namespace introduccionNET
             nuevoNodo.valor = 128;
 
             //Console.WriteLine("Hello World!");
-            //Console.WriteLine("Me lamo Camilo \nSon las : "+ DateTime.Now);
+            Console.WriteLine("Me lamo Camilo \nSon las : "+ DateTime.Now);
 
             Console.WriteLine("El valor almacenado en el nodo es: " + nuevoNodo.valor);
         }
