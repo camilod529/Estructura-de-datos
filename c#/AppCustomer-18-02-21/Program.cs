@@ -15,7 +15,8 @@ namespace AppCustomer_18_02_21
 
                 Console.WriteLine("1. Registrar cliente");
                 Console.WriteLine("2. Listar clientes");
-                Console.WriteLine("3. Salir");
+                Console.WriteLine("3. Buscar cliente por ciudad");
+                Console.WriteLine("4. Salir");
                 opcion = Int32.Parse(Console.ReadLine());
 
                 switch (opcion)
@@ -41,13 +42,22 @@ namespace AppCustomer_18_02_21
                         break;
                     
                     case 3:
+                        Clientes objClient2 = new Clientes();
+                        string palabra;
+                        Console.WriteLine("Digite la ciudad");
+                        palabra = Console.ReadLine();  
+                        //objClient2.ListarClientes(lstClient);      
+                        objClient2.BuscarClientexCiudad(lstClient, palabra);
+                        break;
+                    
+                    case 4:
                         break;
 
                     default:
                         break;
                 }
 
-            }while(opcion != 3);
+            }while(opcion != 4);
             /*
             foreach (Clientes cliente in lstClient)
             {

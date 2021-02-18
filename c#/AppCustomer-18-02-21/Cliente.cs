@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace AppCustomer_18_02_21
 {
@@ -61,6 +62,24 @@ namespace AppCustomer_18_02_21
                 Console.WriteLine("Edad: {0}",cliente.Edad);
                 
             }
+        }
+
+        public void BuscarClientexCiudad(List<Clientes> miLista, string ciudad)
+        {
+            IEnumerable<Clientes> clientQuery =
+            from cliente in miLista
+            where cliente.Ciudad.Contains(ciudad)
+            select cliente;
+
+            foreach (Clientes cliente in clientQuery)
+            {
+                Console.WriteLine("Nombre: {0}",cliente.Nombre);
+                Console.WriteLine("email: {0}",cliente.Email);
+                Console.WriteLine("Ciudad: {0}",cliente.Ciudad);
+                Console.WriteLine("Edad: {0}",cliente.Edad);
+                
+            }
+            
         }
 
     }
