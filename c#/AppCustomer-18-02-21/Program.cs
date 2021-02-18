@@ -36,6 +36,8 @@ namespace AppCustomer_18_02_21
                         lstClient.Add(new Clientes(nombre, email, edad, ciudad));
                         break;
                     case 2:
+                        Clientes objClient = new Clientes();
+                        objClient.ListarClientes(lstClient);
                         break;
                     
                     case 3:
@@ -46,11 +48,11 @@ namespace AppCustomer_18_02_21
                 }
 
             }while(opcion != 3);
-
+            /*
             foreach (Clientes cliente in lstClient)
             {
                 Console.WriteLine(cliente.Nombre);
-            }
+            }*/
 
         }
     }
