@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
+
 
 namespace taller1
 {
@@ -33,6 +36,13 @@ namespace taller1
             this.horapartida = horapartida;
             this.horallegada = horallegada;
             this.valor = valor;
+        }
+
+        public void Guardar(List<Vuelos> miLista)
+        {
+            string json = JsonConvert.SerializeObject(miLista);
+            string path = @"D:\UNAB\estructura_de_datos\JSON-taller1\vuelo.json";
+            File.WriteAllText(path, json);
         }
 
 

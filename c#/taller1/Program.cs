@@ -44,7 +44,15 @@ namespace taller1
                 new Clientes{Id = 114, Nombre = "Cliente D", Correo = "cliented@gmail.com", Telefono = 454234, Ciudad = "Barranquilla"}
             };
 
-
+            Vuelos obVuelos = new Vuelos();
+            obVuelos.Guardar(vuelos);
+            Aviones obAviones = new Aviones();
+            obAviones.Guardar(aviones);
+            Trabajadores obTrabajadores = new Trabajadores();
+            obTrabajadores.Guardar(personal);
+            Clientes obClientes = new Clientes();
+            obClientes.Guardar(clientes);
+            
         }
     }
 }

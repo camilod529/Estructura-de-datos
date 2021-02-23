@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace taller1
 {
@@ -28,6 +31,13 @@ namespace taller1
             this.telefono = telefono;
             this.ciudad = ciudad;
             
+        }
+
+        public void Guardar(List<Clientes> miLista)
+        {
+            string json = JsonConvert.SerializeObject(miLista);
+            string path = @"D:\UNAB\estructura_de_datos\JSON-taller1\clientes.json";
+            File.WriteAllText(path, json);
         }
     }
 }

@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace taller1
 {
@@ -21,6 +24,13 @@ namespace taller1
             this.nombre = nombre;
             this.cargo = cargo;
             
+        }
+
+        public void Guardar(List<Trabajadores> miLista)
+        {
+            string json = JsonConvert.SerializeObject(miLista);
+            string path = @"D:\UNAB\estructura_de_datos\JSON-taller1\personal.json";
+            File.WriteAllText(path, json);
         }
     }
 }
