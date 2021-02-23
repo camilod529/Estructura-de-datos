@@ -37,7 +37,12 @@ namespace taller1
 
             };
 
-            
+            List<Clientes> clientes = new List<Clientes>{
+                new Clientes{Id = 111, Nombre = "Cliente A", Correo = "clientea@gmail.com", Telefono = 35556644, Ciudad = "Bucaramanga"},
+                new Clientes{Id = 112, Nombre = "Cliente B", Correo = "clienteb@hotmail.com", Telefono = 4788995, Ciudad = "Bogota"},
+                new Clientes{Id = 113, Nombre = "Cliente C", Correo = "clientec@yahoo.es", Telefono = 8776433, Ciudad = "Cucuta"},
+                new Clientes{Id = 114, Nombre = "Cliente D", Correo = "cliented@gmail.com", Telefono = 454234, Ciudad = "Barranquilla"}
+            };
 
 
         }
