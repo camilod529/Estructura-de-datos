@@ -9,6 +9,8 @@ namespace AppCustomer_18_02_21
         {
             List<Clientes> lstClient = new List<Clientes>();
             lstClient.Add(new Clientes("jose", "jose@gmail.com", 17, "Bucaramanga"));
+            Clientes obData = new Clientes();
+            lstClient = obData.LoadData();
             int opcion = 0;
             do
             {                
@@ -37,8 +39,7 @@ namespace AppCustomer_18_02_21
                         lstClient.Add(new Clientes(nombre, email, edad, ciudad));
                         break;
                     case 2:
-                        Clientes objClient = new Clientes();
-                        objClient.ListarClientes(lstClient);
+                        obData.ListarClientes(lstClient);
                         break;
                     
                     case 3:
@@ -47,10 +48,12 @@ namespace AppCustomer_18_02_21
                         Console.WriteLine("Digite la ciudad");
                         palabra = Console.ReadLine();  
                         //objClient2.ListarClientes(lstClient);      
-                        objClient2.BuscarClientexCiudad(lstClient, palabra);
+                        obData.BuscarClientexCiudad(lstClient, palabra);
                         break;
                     
                     case 4:
+                    Console.WriteLine("Gracias por usar nuestros serrvicios");
+                    obData.Guardar(lstClient);
                         break;
 
                     default:

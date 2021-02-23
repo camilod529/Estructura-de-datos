@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace AppCustomer_18_02_21
 {
@@ -82,5 +84,26 @@ namespace AppCustomer_18_02_21
             
         }
 
+        public void Guardar(List<Clientes> miLista)
+        {
+            string json = JsonConvert.SerializeObject(miLista);
+            string path = @"D:\UNAB\estructura_de_datos\JSONS\clientes.json";
+            File.WriteAllText(path, json);
+        }
+
+        public List<Clientes> LoadData()
+        {
+            List<Clientes> misDatos = new List<Clientes>();
+            string path = @"D:\UNAB\estructura_de_datos\JSONS\clientes.json";
+            using(StreamReader jsonStream = File.OpenText(path))
+            {
+                var jsond = jsonStream.ReadToEnd();
+                misDatos = JsonConvert.DeserializeObject<List<Clientes>>(jsond);
+            }
+                    
+
+
+            return misDatos;
+        }
     }
 }
