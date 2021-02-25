@@ -7,14 +7,17 @@ namespace taller1
 {
     class Trabajadores
     {
+        //Creacion de atributos
         string numero;
         string nombre;
         string cargo;
 
+        //gets & sets
         public string Numero{get; set; }
         public string Nombre{get; set; }
         public string Cargo{get; set; }
 
+        //constructores
         public Trabajadores()
         { }
 
@@ -26,6 +29,7 @@ namespace taller1
             
         }
 
+        //Persistencia de datos json
         public void Guardar(List<Trabajadores> miLista)
         {
             string json = JsonConvert.SerializeObject(miLista);

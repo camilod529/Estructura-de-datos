@@ -6,20 +6,22 @@ using System.IO;
 namespace taller1
 {
     class Clientes
-    {
+    {   
+        //atributos
         int id;
         string nombre;
         string correo;
         int telefono;
         string ciudad;
         
-
+        //gets & sets
         public int Id{get; set; }
         public string Nombre{get; set; }
         public string Correo{get; set; }
         public int Telefono{get; set; }
         public string Ciudad{get; set; }
 
+        //constructores
         public Clientes()
         { }
 
@@ -33,6 +35,7 @@ namespace taller1
             
         }
 
+        //Persistencia de datos en json
         public void Guardar(List<Clientes> miLista)
         {
             string json = JsonConvert.SerializeObject(miLista);

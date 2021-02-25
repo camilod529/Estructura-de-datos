@@ -7,7 +7,8 @@ using System.IO;
 namespace taller1
 {
     class Vuelos
-    {
+    {   
+        //Creacion de atributos
         string codigo;
         string trayecto;
         string origen;
@@ -16,6 +17,7 @@ namespace taller1
         string horallegada;
         double valor;
 
+        //gets & sets
         public string Codigo {get; set; }
         public string Trayecto {get; set; }
         public string Origen {get; set; }
@@ -24,6 +26,7 @@ namespace taller1
         public string Horallegada {get; set; }
         public double Valor {get; set; }
 
+        //Constructores
         public Vuelos()
         { }
 
@@ -38,6 +41,7 @@ namespace taller1
             this.valor = valor;
         }
 
+        //Persistencia json
         public void Guardar(List<Vuelos> miLista)
         {
             string json = JsonConvert.SerializeObject(miLista);
