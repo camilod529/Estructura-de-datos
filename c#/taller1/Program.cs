@@ -60,14 +60,14 @@ namespace taller1
 
 
             //Creacion diccionario para enlazar aviones x personal
-            Dictionary<string, string> AvionesxPersonal = new Dictionary<string, string>();
+            List<string[]> AvionesxPersonal = new List<string[]>();
 
             //llamando datos avionesxpersonal del json
             path = @"D:\UNAB\estructura_de_datos\JSON-taller1\AvionesxPersonal.json";
             using(StreamReader jsonStream = File.OpenText(path))
             {
                 var jsond = jsonStream.ReadToEnd();
-                AvionesxPersonal = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsond);
+                AvionesxPersonal = JsonConvert.DeserializeObject<List<string[]>>(jsond);
             }
             
 
