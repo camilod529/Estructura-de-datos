@@ -45,10 +45,10 @@ namespace taller1
 
             //Lista de los clientes
             List<Clientes> clientes = new List<Clientes>{
-                new Clientes{Id = 111, Nombre = "Cliente A", Correo = "clientea@gmail.com", Telefono = 35556644, Ciudad = "Bucaramanga"},
-                new Clientes{Id = 112, Nombre = "Cliente B", Correo = "clienteb@hotmail.com", Telefono = 4788995, Ciudad = "Bogota"},
-                new Clientes{Id = 113, Nombre = "Cliente C", Correo = "clientec@yahoo.es", Telefono = 8776433, Ciudad = "Cucuta"},
-                new Clientes{Id = 114, Nombre = "Cliente D", Correo = "cliented@gmail.com", Telefono = 454234, Ciudad = "Barranquilla"}
+                new Clientes{Id = "111", Nombre = "Cliente A", Correo = "clientea@gmail.com", Telefono = 35556644, Ciudad = "Bucaramanga"},
+                new Clientes{Id = "112", Nombre = "Cliente B", Correo = "clienteb@hotmail.com", Telefono = 4788995, Ciudad = "Bogota"},
+                new Clientes{Id = "113", Nombre = "Cliente C", Correo = "clientec@yahoo.es", Telefono = 8776433, Ciudad = "Cucuta"},
+                new Clientes{Id = "114", Nombre = "Cliente D", Correo = "cliented@gmail.com", Telefono = 454234, Ciudad = "Barranquilla"}
             };
 
             //Persistencia de los datos en json 
@@ -86,12 +86,58 @@ namespace taller1
            avionxtrayecto.Add(new string[]{aviones[1].Numero,vuelos[1].Codigo,"25-02-21"});
            avionxtrayecto.Add(new string[]{aviones[2].Numero,vuelos[2].Codigo,"01-03-21"});
            avionxtrayecto.Add(new string[]{aviones[3].Numero,vuelos[3].Codigo,"08-03-21"});
-           foreach (string[] item in avionxtrayecto)
-           {
-               Console.WriteLine(item);
-           }    
 
-            /*for (int i = 0; i < avionxtrayecto.GetLength(0); i++)
+            List<string[]> clientesxtrayecto = new List<string[]>();
+            clientesxtrayecto.Add(new string[]{clientes[0].Id, vuelos[0].Codigo, "10-03-21"});
+            clientesxtrayecto.Add(new string[]{clientes[1].Id, vuelos[1].Codigo, "25-02-21"});
+            clientesxtrayecto.Add(new string[]{clientes[2].Id, vuelos[2].Codigo, "01-03-21"});
+
+            string json = JsonConvert.SerializeObject(AvionesxPersonal);
+            string path = @"D:\UNAB\estructura_de_datos\JSON-taller1\AvionesxPersonal.json";
+            File.WriteAllText(path, json);
+            json = JsonConvert.SerializeObject(avionxtrayecto);
+            path = @"D:\UNAB\estructura_de_datos\JSON-taller1\avionxtrayecto.json";
+            File.WriteAllText(path, json);
+            json = JsonConvert.SerializeObject(clientesxtrayecto);
+            path = @"D:\UNAB\estructura_de_datos\JSON-taller1\clientesxtrayecto.json";
+            File.WriteAllText(path, json);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           /*for (int i = 0; i < avionxtrayecto.Count; i++)
+           {
+               for (int j = 0; j < avionxtrayecto[i].Length; j++)
+               {
+                   Console.Write(avionxtrayecto[i][j]);
+               }
+               Console.WriteLine();
+           }
+    
+
+            for (int i = 0; i < avionxtrayecto.GetLength(0); i++)
         {
             for (int j = 0; j < avionxtrayecto.GetLength(1); j++)
             {
