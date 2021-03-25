@@ -1,0 +1,1 @@
+{"1":{"ClientId":"1","ClientName":"cliente1","Email":"correo1","ClothingCode":"1","ClothingName":"camisa","Category":"Caballero","QuantityToProduce":10,"UnitCost":10.0,"ProducedQuantity":2},"2":{"ClientId":"2","ClientName":"cliente2","Email":"correo2","ClothingCode":"2","ClothingName":"pantalon","Category":"Dama","QuantityToProduce":10,"UnitCost":5.0,"ProducedQuantity":0}}
